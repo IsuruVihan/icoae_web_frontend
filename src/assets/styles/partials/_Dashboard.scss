@@ -1,11 +1,40 @@
 .App {
-    .dashboard {
-        .nav-btn {
-            cursor: pointer;
-        }
-        .tab {
-            box-shadow: 2px 4px 8px lightgray;
-            border-radius: 5px;
-        }
+  .dashboard {
+    .nav-btn {
+      cursor: pointer;
     }
+    .tab {
+      box-shadow: 2px 4px 8px lightgray;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px){
+
+}
+
+@media screen and (min-width: 576px){
+
+}
+
+@media screen and (min-width: 768px){
+
+}
+
+@media screen and (min-width: 992px){
+
+}
+
+@media screen and (min-width: 1200px){
+  .App {
+    .dashboard {
+      .nav-btn {
+
+      }
+      .tab {
+
+      }
+    }
+  }
 }
