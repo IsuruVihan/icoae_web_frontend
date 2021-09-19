@@ -1,0 +1,81 @@
+.App {
+  .top {
+    .row {
+      padding: 1em;
+      box-shadow: 0 0 5px lightgray;
+      .title {
+        font-weight: 600;
+        color: #434343;
+      }
+      .logout-btn {
+        .logout-link {
+          text-decoration: none;
+          color: #DC3545;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px){
+  .App {
+    .top {
+      .row {
+        .title {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 576px){
+  .App {
+    .top {
+      .row {
+        .title {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px){
+  .App {
+    .top {
+      .row {
+        .title {
+          font-size: 1.3em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px){
+  .App {
+    .top {
+      .row {
+        .title {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .App {
+    .top {
+      .row {
+        .title {
+          font-size: 1.7em;
+        }
+      }
+    }
+  }
+}
