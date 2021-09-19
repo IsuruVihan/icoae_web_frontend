@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, Col, Container, Row} from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Top = () => {
   return (
@@ -9,7 +10,9 @@ const Top = () => {
           <label className='title'>Admin Dashboard</label>
         </Col>
         <Col className='px-0 text-end' xs={4}>
-          <Button variant='outline-danger' size='sm'>Logout</Button>
+          <Button className='logout-btn' variant='outline-danger' size='sm'>
+            <Link className='logout-link' to='/login'>Logout</Link>
+          </Button>
         </Col>
       </Row>
     </Container>

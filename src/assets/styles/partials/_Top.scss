@@ -7,6 +7,15 @@
         font-weight: 600;
         color: #434343;
       }
+      .logout-btn {
+        .logout-link {
+          text-decoration: none;
+          color: #DC3545;
+          &:hover {
+            color: white;
+          }
+        }
+      }
     }
   }
 }

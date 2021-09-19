@@ -1,12 +1,19 @@
 import React from 'react';
 import './assets/styles/App.scss';
 import {Container} from "react-bootstrap";
-import Top from "./components/Top/Top";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Login from "./views/Login";
+import Dashboard from "./views/Dashboard";
 
 const App = () => {
   return (
     <Container className="App px-0" fluid>
-      <Top />
+      <Router>
+        <Switch>
+          <Route path='/dashboard' component={Dashboard} />
+          <Route path='/login' component={Login} />
+        </Switch>
+      </Router>
     </Container>
   );
 }
