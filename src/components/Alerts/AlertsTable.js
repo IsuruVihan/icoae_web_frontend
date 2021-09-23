@@ -43,6 +43,26 @@ const columns = [{
   text: 'ID',
   sort: true
 }, {
+  dataField: 'picSrc',
+  text: 'picSrc',
+  hidden: true
+},  {
+  dataField: 'name',
+  text: 'Name',
+  hidden: true
+},  {
+  dataField: 'age',
+  text: 'Age',
+  hidden: true
+},  {
+  dataField: 'gender',
+  text: 'Gender',
+  hidden: true
+},  {
+  dataField: 'city',
+  text: 'City',
+  hidden: true
+}, {
   dataField: 'sensorData.temp',
   text: 'Temp'
 }, {
@@ -51,16 +71,35 @@ const columns = [{
 }, {
   dataField: 'sensorData.fall',
   text: 'Fall'
-}];
+}, {
+  dataField: 'description',
+  text: 'Description',
+  hidden: true
+}, {
+  dataField: 'patientTelNo',
+  text: 'PatientTelephoneNumber',
+  hidden: true
+}, {
+  dataField: 'guardianTelNo',
+  text: 'GuardianTelephoneNumber',
+  hidden: true
+}, {
+  dataField: 'status',
+  text: 'Status'
+}, ];
 
 // Table row select
 const selectRow = {
-  mode: 'radio'
+  mode: 'radio',
+  clickToSelect: true,
+  onSelect: (row, isSelect, rowIndex, e) => {
+    //
+  }
 };
 
 const AlertsTable = () => {
   return (
-    <Container className='px-0 alerts-table' fluid>
+    <Container className='px-0 alerts-table text-center' fluid>
       <BootstrapTable keyField='id' data={ alertList } columns={ columns } selectRow={selectRow} />
     </Container>
   );

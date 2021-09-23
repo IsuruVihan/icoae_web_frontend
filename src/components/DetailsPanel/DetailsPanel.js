@@ -1,6 +1,7 @@
 import React from 'react';
-import {Container, Row, Col, Image, Form, Button} from "react-bootstrap";
+import {Container, Row, Col, Image, Form} from "react-bootstrap";
 import DummyUser from '../../assets/images/user-regular.svg';
+import AvailableAmbulancesTable from "./AvailableAmbulancesTable";
 
 const DetailsPanel = () => {
   return (
@@ -106,6 +107,9 @@ const DetailsPanel = () => {
             </Col>
           </Row>
         </Col>
+      </Row>
+      <Row className="avail-ambulances-row mx-0 mt-2 p-2">
+        <AvailableAmbulancesTable/>
       </Row>
     </Container>
   );

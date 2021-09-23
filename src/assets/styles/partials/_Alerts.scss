@@ -84,6 +84,24 @@
               }
             }
           }
+          .avail-ambulances-row {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            .available-ambulances-table {
+              .title {
+                font-size: 1.1em;
+                font-weight: 700;
+              }
+              .ambulance-details-panel {
+                border: 1px solid lightgray;
+                border-radius: 5px;
+                .buttons-col {
+                  display: flex;
+                  justify-content: space-evenly;
+                }
+              }
+            }
+          }
         }
       }
     }
