@@ -1,0 +1,60 @@
+.App {
+  .dashboard {
+    .alerts {
+      background: white;
+      .details-panel-container {
+        .details-panel {
+          border: 1px solid gray;
+          border-radius: 5px;
+          .user-pic-container {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .patient-details-form {
+            height: 100%;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+          }
+          .sensor-data-row {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            .sensor-data-set {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              .sensor-label, .sensor-value {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px){
+
+}
+
+@media screen and (min-width: 576px){
+
+}
+
+@media screen and (min-width: 768px){
+
+}
+
+@media screen and (min-width: 992px){
+
+}
+
+@media screen and (min-width: 1200px){
+
+}

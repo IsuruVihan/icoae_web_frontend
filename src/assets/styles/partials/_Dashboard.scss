@@ -1,5 +1,6 @@
 .App {
   .dashboard {
+    background: white;
     .nav-btn {
       cursor: pointer;
     }
@@ -27,14 +28,5 @@
 }
 
 @media screen and (min-width: 1200px){
-  .App {
-    .dashboard {
-      .nav-btn {
 
-      }
-      .tab {
-
-      }
-    }
-  }
 }
