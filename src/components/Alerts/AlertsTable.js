@@ -60,7 +60,7 @@ const selectRow = {
 
 const AlertsTable = () => {
   return (
-    <Container className='px-0' fluid>
+    <Container className='px-0 alerts-table' fluid>
       <BootstrapTable keyField='id' data={ alertList } columns={ columns } selectRow={selectRow} />
     </Container>
   );

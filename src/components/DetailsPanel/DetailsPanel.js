@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Row, Col, Image, Form} from "react-bootstrap";
+import {Container, Row, Col, Image, Form, Button} from "react-bootstrap";
 import DummyUser from '../../assets/images/user-regular.svg';
 
 const DetailsPanel = () => {
@@ -78,9 +78,33 @@ const DetailsPanel = () => {
           </Row>
         </Col>
       </Row>
-      <Row className="description-row mx-0 mt-2">
-        <Col className="description-col p-2">
+      <Row className="description-row mx-0 mt-2 p-2">
+        <Col className="description-col p-2" xl={8} lg={12} xs={8}>
           Description comes here
+        </Col>
+        <Col className="tel-col ps-xl-1 ps-lg-0 ps-sm-1 pe-0" xl={4} lg={12} xs={4}>
+          <Row className="tel-row flex-column justify-content-between mx-0">
+            <Col className="tel-person align-center p-1" xs={12}>
+              <Row className="name-number mx-0">
+                <Col className="name text-center px-0" xs={12}>
+                  Patient
+                </Col>
+                <Col className="number text-center px-0" xs={12}>
+                  768036130
+                </Col>
+              </Row>
+            </Col>
+            <Col className="tel-person align-center p-1" xs={12}>
+              <Row className="name-number mx-0">
+                <Col className="name text-center px-0" xs={12}>
+                  Guardian
+                </Col>
+                <Col className="number text-center px-0" xs={12}>
+                  768036130
+                </Col>
+              </Row>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </Container>
