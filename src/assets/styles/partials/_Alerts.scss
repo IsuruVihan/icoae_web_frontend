@@ -31,6 +31,20 @@
               .sensor-label, .sensor-value {
                 text-align: center;
               }
+              .sensor-label {
+                color: dimgray;
+              }
+            }
+          }
+          .description-row {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            height: 20vh;
+            overflow: hidden;
+            overflow-y: scroll;
+            .description-col {
+              color: dimgray;
+              overflow-wrap: break-word;
             }
           }
         }

@@ -78,6 +78,11 @@ const DetailsPanel = () => {
           </Row>
         </Col>
       </Row>
+      <Row className="description-row mx-0 mt-2">
+        <Col className="description-col p-2">
+          Description comes here
+        </Col>
+      </Row>
     </Container>
   );
 }
