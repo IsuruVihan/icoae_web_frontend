@@ -1,9 +1,10 @@
 import React from 'react';
-import {Container, Tab, Row, Col, Nav} from "react-bootstrap";
+import { Container, Tab, Row, Col, Nav } from "react-bootstrap";
 import Top from "../components/Top/Top";
+import Register from "./Register";
 
 const Dashboard = () => {
-  return(
+  return (
     <Container className='px-0 dashboard' fluid>
       <Top />
       <Container className='px-5 py-5' fluid>
@@ -43,7 +44,7 @@ const Dashboard = () => {
                   History
                 </Tab.Pane>
                 <Tab.Pane className='tab p-3' eventKey="Register">
-                  Register
+                  <Register />
                 </Tab.Pane>
               </Tab.Content>
             </Col>
