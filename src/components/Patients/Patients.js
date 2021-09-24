@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import AlertsTable from "./AlertsTable";
+import PatientsTable from "./PatientsTable";
 import DetailsPanel from "./DetailsPanel/DetailsPanel";
 
-const Alerts = () => {
-  const [selectedAlert, setSelectedAlert] = useState({
+const Patients = () => {
+  const [selectedPatient, setSelectedPatient] = useState({
     id: '',
     picSrc: '',
     name: '',
@@ -16,32 +16,31 @@ const Alerts = () => {
       pulse: '',
       fall: ''
     },
-    location: {
-      lat: '',
-      long: ''
-    },
     description: '',
-    patientTelNo: '',
-    guardianTelNo: '',
-    status: ''
+    location: {
+      lat: 0,
+      long: 0
+    },
+    telNo: '',
+    guardianId: ''
   });
 
-  const onChangeSelectedAlert = (newAlert) => {
-    setSelectedAlert(newAlert);
+  const onChangeSelectedPatient = (newPatient) => {
+    setSelectedPatient(newPatient);
   }
 
   return (
-    <Container className='alerts px-0' fluid>
+    <Container className='patients px-0' fluid>
       <Row className='mx-0'>
         <Col className='table-container px-0' xl={6} lg={8} sm={12} xs={12}>
-          <AlertsTable onChangeSelectedAlert={onChangeSelectedAlert} />
+          <PatientsTable onChangeSelectedPatient={onChangeSelectedPatient} />
         </Col>
         <Col className='details-panel-container px-lg-3 px-sm-0' xl={6} lg={4} sm={12} xs={12}>
-          <DetailsPanel selectedAlert={selectedAlert}/>
+          <DetailsPanel selectedPatient={selectedPatient}/>
         </Col>
       </Row>
     </Container>
   );
 }
 
-export default Alerts;
+export default Patients;

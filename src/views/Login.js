@@ -16,19 +16,14 @@ const Login = () => {
               <Form.Label>Email address</Form.Label>
               <Form.Control type="email" placeholder="Enter email" />
             </Form.Group>
-
             <Form.Group controlId="formBasicPassword" className="mt-3">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" />
             </Form.Group>
-
-            <Button variant="primary btn-block mt-4 text-center" type="submit">
+            <Button variant="primary btn-block mt-4 text-center">
               Login
             </Button>
           </Form>
-
-
-
         </Col>
       </Row>
       <h6 className="mt-5 p-5 text-center ">Copyright © 2021 Code360. All Rights Reserved.</h6>
