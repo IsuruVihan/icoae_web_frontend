@@ -3,7 +3,7 @@ import {Container, Row, Col, Image, Form} from "react-bootstrap";
 import DummyUser from '../../assets/images/user-regular.svg';
 import AvailableAmbulancesTable from "./AvailableAmbulancesTable";
 
-const DetailsPanel = () => {
+const DetailsPanel = ({selectedAlert}) => {
   return (
     <Container className='details-panel p-2' fluid>
       <Row className='mx-0'>
@@ -17,7 +17,7 @@ const DetailsPanel = () => {
                 Name
               </Form.Label>
               <Col xxl={10} xl={9}>
-                <Form.Control type="text" size="sm" placeholder="Patient name" disabled/>
+                <Form.Control value={selectedAlert.name} type="text" size="sm" placeholder="Patient name" disabled/>
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -25,7 +25,7 @@ const DetailsPanel = () => {
                 Age
               </Form.Label>
               <Col xxl={10} xl={9}>
-                <Form.Control type="text" size="sm" placeholder="Patient age" disabled/>
+                <Form.Control value={selectedAlert.age} type="text" size="sm" placeholder="Patient age" disabled/>
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -33,7 +33,7 @@ const DetailsPanel = () => {
                 Gender
               </Form.Label>
               <Col xxl={10} xl={9}>
-                <Form.Control type="text" size="sm" placeholder="Patient gender" disabled/>
+                <Form.Control value={selectedAlert.gender} type="text" size="sm" placeholder="Patient gender" disabled/>
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -41,7 +41,7 @@ const DetailsPanel = () => {
                 City
               </Form.Label>
               <Col xxl={10} xl={9}>
-                <Form.Control type="text" size="sm" placeholder="Patient city" disabled/>
+                <Form.Control value={selectedAlert.city} type="text" size="sm" placeholder="Patient city" disabled/>
               </Col>
             </Form.Group>
           </Form>
@@ -54,7 +54,7 @@ const DetailsPanel = () => {
               Temp
             </Col>
             <Col className="sensor-value px-0" xs={12}>
-              <Form.Control type="text" size="sm" placeholder="Temp" disabled/>
+              <Form.Control value={selectedAlert.sensorData.temp} type="text" size="sm" placeholder="Temp" disabled/>
             </Col>
           </Row>
         </Col>
@@ -64,7 +64,7 @@ const DetailsPanel = () => {
               Pulse
             </Col>
             <Col className="sensor-value px-0" xs={12}>
-              <Form.Control type="text" size="sm" placeholder="Pulse" disabled/>
+              <Form.Control value={selectedAlert.sensorData.pulse} type="text" size="sm" placeholder="Pulse" disabled/>
             </Col>
           </Row>
         </Col>
@@ -74,14 +74,14 @@ const DetailsPanel = () => {
               Fall
             </Col>
             <Col className="sensor-value px-0" xs={12}>
-              <Form.Control type="text" size="sm" placeholder="Fall" disabled/>
+              <Form.Control value={selectedAlert.sensorData.fall} type="text" size="sm" placeholder="Fall" disabled/>
             </Col>
           </Row>
         </Col>
       </Row>
       <Row className="description-row mx-0 mt-2 p-2">
         <Col className="description-col p-2" xl={8} lg={12} xs={8}>
-          Description comes here
+          {selectedAlert.description}
         </Col>
         <Col className="tel-col ps-xl-1 ps-lg-0 ps-sm-1 pe-0" xl={4} lg={12} xs={4}>
           <Row className="tel-row flex-column justify-content-between mx-0">
@@ -91,7 +91,7 @@ const DetailsPanel = () => {
                   Patient
                 </Col>
                 <Col className="number text-center px-0" xs={12}>
-                  768036130
+                  {selectedAlert.patientTelNo}
                 </Col>
               </Row>
             </Col>
@@ -101,16 +101,18 @@ const DetailsPanel = () => {
                   Guardian
                 </Col>
                 <Col className="number text-center px-0" xs={12}>
-                  768036130
+                  {selectedAlert.guardianTelNo}
                 </Col>
               </Row>
             </Col>
           </Row>
         </Col>
       </Row>
-      <Row className="avail-ambulances-row mx-0 mt-2 p-2">
-        <AvailableAmbulancesTable/>
-      </Row>
+      {(selectedAlert.id !== '') &&
+        <Row className="avail-ambulances-row mx-0 mt-2 p-2">
+          <AvailableAmbulancesTable/>
+        </Row>
+      }
     </Container>
   );
 }

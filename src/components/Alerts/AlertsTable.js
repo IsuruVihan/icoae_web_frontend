@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
 import {Container} from "react-bootstrap";
 
@@ -88,16 +88,54 @@ const columns = [{
   text: 'Status'
 }, ];
 
-// Table row select
-const selectRow = {
-  mode: 'radio',
-  clickToSelect: true,
-  onSelect: (row, isSelect, rowIndex, e) => {
-    //
-  }
-};
+const AlertsTable = ({onChangeSelectedAlert}) => {
+  const [selectedAlert, setSelectedAlert] = useState({
+    id: '',
+    picSrc: '',
+    name: '',
+    age: '',
+    gender: '',
+    city: '',
+    sensorData: {
+      temp: '',
+      pulse: '',
+      fall: ''
+    },
+    description: '',
+    patientTelNo: '',
+    guardianTelNo: '',
+    status: ''
+  });
 
-const AlertsTable = () => {
+  useEffect(() => {
+    onChangeSelectedAlert(selectedAlert);
+  });
+
+  // Table row select
+  const selectRow = {
+    mode: 'radio',
+    clickToSelect: true,
+    onSelect: (row, isSelect, rowIndex, e) => {
+      setSelectedAlert({
+        id: row.id,
+        picSrc: row.picSrc,
+        name: row.name,
+        age: row.age,
+        gender: row.gender,
+        city: row.city,
+        sensorData: {
+          temp: row.sensorData.temp,
+          pulse: row.sensorData.pulse,
+          fall: row.sensorData.fall
+        },
+        description: row.description,
+        patientTelNo: row.patientTelNo,
+        guardianTelNo: row.guardianTelNo,
+        status: row.status
+      });
+    }
+  };
+
   return (
     <Container className='px-0 alerts-table text-center' fluid>
       <BootstrapTable keyField='id' data={ alertList } columns={ columns } selectRow={selectRow} />

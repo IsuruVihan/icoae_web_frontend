@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import BootstrapTable from "react-bootstrap-table-next";
 import {Container} from "react-bootstrap";
 import AmbulanceDetailsPanel from "./AmbulanceDetailsPanel";
@@ -42,21 +42,35 @@ const columns = [{
   hidden: true
 }];
 
-// Table row select
-const selectRow = {
-  mode: 'radio',
-  clickToSelect: true,
-  onSelect: (row, isSelect, rowIndex, e) => {
-    //
-  }
-};
-
 const AvailableAmbulancesTable = () => {
+  const [selectedAmbulance, setSelectedAmbulance] = useState({
+    id: '',
+    name: '',
+    availability: '',
+    distance: '',
+    telNo: ''
+  });
+
+  // Table row select
+  const selectRow = {
+    mode: 'radio',
+    clickToSelect: true,
+    onSelect: (row, isSelect, rowIndex, e) => {
+      setSelectedAmbulance({
+        id: row.id,
+        name: row.name,
+        availability: row.availability,
+        distance: row.distance,
+        telNo: row.telNo
+      });
+    }
+  };
+
   return (
     <Container className='px-0 available-ambulances-table text-center' fluid>
       <label className='title py-2'>Available Ambulances</label>
       <BootstrapTable keyField='id' data={availableAmbulanceList} columns={columns} selectRow={selectRow}/>
-      <AmbulanceDetailsPanel/>
+      <AmbulanceDetailsPanel selectedAmbulance={selectedAmbulance}/>
     </Container>
   );
 }
