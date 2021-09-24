@@ -3,7 +3,7 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import {Container} from "react-bootstrap";
 
 // Dummy data
-const alertList = [{
+const patientList = [{
   id: 1,
   picSrc: '',
   name: 'Isuru Harischandra',
@@ -15,41 +15,33 @@ const alertList = [{
     pulse: 123.23,
     fall: 1
   },
-  location: {
-    lat: 78.4535,
-    long: 27.6354
-  },
   description: 'Low pressure',
-  patientTelNo: '0768036130',
-  guardianTelNo: '0714878261',
-  status: 'Unassigned',
-}, {
-  id: 2,
+  location: {
+    lat: 6.93194,
+    long: 79.84778
+  },
+  telNo: '0768036130'
+}];
+
+const guardianList = [{
+  id: 1,
+  patientId: 1,
   picSrc: '',
-  name: 'Sayuru Harischandra',
-  age: 17,
+  name: 'Isuru Harischandra',
+  relationship: 22,
   gender: 'Male',
   city: 'Athurugiriya',
-  sensorData: {
-    temp: 32.67,
-    pulse: 117.35,
-    fall: 0
-  },
   location: {
-    lat: 78.4535,
-    long: 27.6354
+    lat: 6.93194,
+    long: 79.84778
   },
-  description: 'High pressure',
-  patientTelNo: '0777770627',
-  guardianTelNo: '0714878261',
-  status: 'Unassigned'
+  telNo: '0768036130'
 }];
 
 // Table columns
 const columns = [{
   dataField: 'id',
-  text: 'ID',
-  sort: true
+  text: 'ID'
 }, {
   dataField: 'picSrc',
   text: 'picSrc',
@@ -80,6 +72,10 @@ const columns = [{
   dataField: 'sensorData.fall',
   text: 'Fall'
 }, {
+  dataField: 'description',
+  text: 'Description',
+  hidden: true
+}, {
   dataField: 'location.lat',
   text: 'Latitude',
   hidden: true
@@ -88,24 +84,13 @@ const columns = [{
   text: 'Longitude',
   hidden: true
 }, {
-  dataField: 'description',
-  text: 'Description',
+  dataField: 'telNo',
+  text: 'ContactNumber',
   hidden: true
-}, {
-  dataField: 'patientTelNo',
-  text: 'PatientTelephoneNumber',
-  hidden: true
-}, {
-  dataField: 'guardianTelNo',
-  text: 'GuardianTelephoneNumber',
-  hidden: true
-}, {
-  dataField: 'status',
-  text: 'Status'
-}, ];
+}];
 
-const AlertsTable = ({onChangeSelectedAlert}) => {
-  const [selectedAlert, setSelectedAlert] = useState({
+const PatientsTable = ({onChangeSelectedPatient}) => {
+  const [selectedPatient, setSelectedPatient] = useState({
     id: '',
     picSrc: '',
     name: '',
@@ -117,18 +102,16 @@ const AlertsTable = ({onChangeSelectedAlert}) => {
       pulse: '',
       fall: ''
     },
+    description: '',
     location: {
       lat: '',
       long: ''
     },
-    description: '',
-    patientTelNo: '',
-    guardianTelNo: '',
-    status: ''
+    telNo: ''
   });
 
   useEffect(() => {
-    onChangeSelectedAlert(selectedAlert);
+    onChangeSelectedPatient(selectedPatient);
   });
 
   // Table row select
@@ -136,7 +119,7 @@ const AlertsTable = ({onChangeSelectedAlert}) => {
     mode: 'radio',
     clickToSelect: true,
     onSelect: (row, isSelect, rowIndex, e) => {
-      setSelectedAlert({
+      setSelectedPatient({
         id: row.id,
         picSrc: row.picSrc,
         name: row.name,
@@ -148,23 +131,21 @@ const AlertsTable = ({onChangeSelectedAlert}) => {
           pulse: row.sensorData.pulse,
           fall: row.sensorData.fall
         },
+        description: row.description,
         location: {
           lat: row.location.lat,
           long: row.location.long
         },
-        description: row.description,
-        patientTelNo: row.patientTelNo,
-        guardianTelNo: row.guardianTelNo,
-        status: row.status
+        telNo: row.telNo
       });
     }
   };
 
   return (
-    <Container className='px-0 alerts-table text-center' fluid>
-      <BootstrapTable keyField='id' data={ alertList } columns={ columns } selectRow={selectRow} />
+    <Container className='px-0 patients-table text-center' fluid>
+      <BootstrapTable keyField='id' data={ patientList } columns={ columns } selectRow={selectRow} />
     </Container>
   );
 }
 
-export default AlertsTable;
+export default PatientsTable;

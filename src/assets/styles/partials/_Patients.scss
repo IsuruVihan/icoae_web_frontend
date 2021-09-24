@@ -1,0 +1,119 @@
+.App {
+  .dashboard {
+    .patients {
+      background: white;
+      .table-container {
+        .patients-table {
+          box-shadow: 2px 2px 2px lightgray;
+          border-radius: 5px;
+        }
+      }
+      .details-panel-container {
+        .details-panel {
+          //border: 1px solid lightgray;
+          box-shadow: 2px 2px 2px lightgray;
+          border-radius: 5px;
+          .user-pic-container {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .patient-details-form {
+            height: 100%;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+          }
+          .sensor-data-row {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            .sensor-data-set {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              .sensor-label, .sensor-value {
+                text-align: center;
+              }
+              .sensor-label {
+                color: dimgray;
+              }
+            }
+          }
+          .description-row {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            .description-col {
+              border: 1px solid lightgray;
+              border-radius: 5px;
+              height: 20vh;
+              color: dimgray;
+              overflow-wrap: break-word;
+              overflow: hidden;
+              overflow-y: scroll;
+            }
+            .tel-col {
+              height: 20vh;
+              .tel-row {
+                height: 100%;
+                .tel-person {
+                  border: 1px solid lightgray;
+                  border-radius: 5px;
+                  height: 47%;
+                  .name-number {
+                    .name {
+                      border: 1px solid gray;
+                      border-bottom-color: white;
+                      border-radius: 5px 5px 0 0;
+                    }
+                    .number {
+                      border: 1px solid green;
+                      border-radius: 0 0 5px 5px;
+                      transition: all ease-in-out 0.5s;
+                      &:hover {
+                        color: white;
+                        background: green;
+                        cursor: pointer;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .guardian-title {
+            font-size: 1.3em;
+            font-weight: 600;
+          }
+          .map-row {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px){
+
+}
+
+@media screen and (min-width: 576px){
+
+}
+
+@media screen and (min-width: 768px){
+
+}
+
+@media screen and (min-width: 992px){
+
+}
+
+@media screen and (min-width: 1200px){
+
+}

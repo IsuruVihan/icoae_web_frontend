@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Row, Col, Image, Form} from "react-bootstrap";
-import DummyUser from '../../assets/images/user-regular.svg';
+import DummyUser from '../../../assets/images/user-regular.svg';
 import AvailableAmbulancesTable from "./AvailableAmbulancesTable";
 
 const DetailsPanel = ({selectedAlert}) => {
