@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Tab, Row, Col, Nav } from "react-bootstrap";
 import Top from "../components/Top/Top";
+import Alerts from "../components/Alerts/Alerts";
 import Register from "./Register";
 
 const Dashboard = () => {
@@ -29,10 +30,10 @@ const Dashboard = () => {
                 </Nav.Item>
               </Nav>
             </Col>
-            <Col xxl={11} lg={10} sm={12}>
+            <Col className="px-md-2 pt-lg-0 pt-sm-4 px-sm-0" xxl={11} lg={10} sm={12}>
               <Tab.Content>
                 <Tab.Pane className='tab p-3' eventKey="Alerts">
-                  Alerts
+                  <Alerts />
                 </Tab.Pane>
                 <Tab.Pane className='tab p-3' eventKey="Patients">
                   Patients
