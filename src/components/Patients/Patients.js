@@ -21,7 +21,8 @@ const Patients = () => {
       lat: 0,
       long: 0
     },
-    telNo: ''
+    telNo: '',
+    guardianId: ''
   });
 
   const onChangeSelectedPatient = (newPatient) => {

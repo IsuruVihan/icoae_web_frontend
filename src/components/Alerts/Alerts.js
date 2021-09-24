@@ -16,6 +16,10 @@ const Alerts = () => {
       pulse: '',
       fall: ''
     },
+    location: {
+      lat: '',
+      long: ''
+    },
     description: '',
     patientTelNo: '',
     guardianTelNo: '',

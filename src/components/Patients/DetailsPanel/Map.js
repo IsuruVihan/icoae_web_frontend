@@ -6,17 +6,17 @@ import {
   Marker,
 } from "react-google-maps";
 
-const Map = ({lat, lng}) => {
+const Map = ({patientLoc, guardianLoc}) => {
   const MapWithAMarker = withScriptjs(withGoogleMap(props =>
     <GoogleMap
       defaultZoom={15}
-      defaultCenter={{lat: lat, lng: lng}}
+      defaultCenter={{lat: patientLoc.lat, lng: patientLoc.long}}
     >
       <Marker
-        position={{lat: lat, lng: lng}}
+        position={{lat: patientLoc.lat, lng: patientLoc.long}}
       />
       <Marker
-        position={{lat: lat+2, lng: lng+2}}
+        position={{lat: guardianLoc.lat, lng: guardianLoc.long}}
       />
     </GoogleMap>
   ));

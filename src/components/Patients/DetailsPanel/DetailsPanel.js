@@ -3,6 +3,22 @@ import {Container, Row, Col, Image, Form} from "react-bootstrap";
 import DummyUser from '../../../assets/images/user-regular.svg';
 import Map from "./Map";
 
+// Dummy data
+const guardianList = [{
+  id: 1,
+  patientId: 1,
+  picSrc: '',
+  name: 'Sisira Harischandra',
+  relationship: 'Father',
+  gender: 'Male',
+  city: 'Athurugiriya',
+  location: {
+    lat: 6.9036,
+    long: 79.9547
+  },
+  telNo: '0714878261'
+}];
+
 const DetailsPanel = ({selectedPatient}) => {
   return (
     <Container className='details-panel p-2' fluid>
@@ -104,6 +120,14 @@ const DetailsPanel = ({selectedPatient}) => {
                   {selectedPatient.telNo}
                 </Col>
               </Row>
+              <Row className="name-number mx-0">
+                <Col className="name text-center px-0" xs={12}>
+                  Guardian
+                </Col>
+                <Col className="number text-center px-0" xs={12}>
+                  {guardianList[0].telNo}
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Col>
@@ -124,7 +148,7 @@ const DetailsPanel = ({selectedPatient}) => {
                 Id
               </Form.Label>
               <Col xxl={10} xl={9}>
-                <Form.Control value={selectedPatient.id} type="text" size="sm" placeholder="Patient ID" disabled/>
+                <Form.Control value={guardianList[0].id} type="text" size="sm" placeholder="Guardian ID" disabled/>
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -132,7 +156,7 @@ const DetailsPanel = ({selectedPatient}) => {
                 Name
               </Form.Label>
               <Col xxl={10} xl={9}>
-                <Form.Control value={selectedPatient.name} type="text" size="sm" placeholder="Patient name" disabled/>
+                <Form.Control value={guardianList[0].name} type="text" size="sm" placeholder="Guardian name" disabled/>
               </Col>
             </Form.Group>
             <Form.Group as={Row}>
@@ -149,7 +173,7 @@ const DetailsPanel = ({selectedPatient}) => {
                 Gender
               </Form.Label>
               <Col xxl={10} xl={9}>
-                <Form.Control value={selectedPatient.gender} type="text" size="sm" placeholder="Patient gender"
+                <Form.Control value={guardianList[0].gender} type="text" size="sm" placeholder="Guardian gender"
                               disabled/>
               </Col>
             </Form.Group>
@@ -158,30 +182,15 @@ const DetailsPanel = ({selectedPatient}) => {
                 City
               </Form.Label>
               <Col xxl={10} xl={9}>
-                <Form.Control value={selectedPatient.city} type="text" size="sm" placeholder="Patient city" disabled/>
+                <Form.Control value={guardianList[0].city} type="text" size="sm" placeholder="Guardian city" disabled/>
               </Col>
             </Form.Group>
           </Form>
         </Col>
       </Row>
-      <Row className="description-row mx-0 mt-2 p-2">
-        <Col className="tel-col ps-xl-1 ps-lg-0 ps-sm-1 pe-0" xl={4} lg={12} xs={4}>
-          <Row className="tel-row flex-column justify-content-between mx-0">
-            <Col className="tel-person align-center p-1" xs={12}>
-              <Row className="name-number mx-0">
-                <Col className="name text-center px-0" xs={12}>
-                  Patient
-                </Col>
-                <Col className="number text-center px-0" xs={12}>
-                  {selectedPatient.telNo}
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+
       <Row className="map-row mx-0 mt-2 p-2">
-        <Map lat={selectedPatient.location.lat} lng={selectedPatient.location.long}/>
+        <Map patientLoc={selectedPatient.location} guardianLoc={guardianList[0].location}/>
       </Row>
     </Container>
   );

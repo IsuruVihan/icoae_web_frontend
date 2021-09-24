@@ -10,7 +10,6 @@
       }
       .details-panel-container {
         .details-panel {
-          //border: 1px solid lightgray;
           box-shadow: 2px 2px 2px lightgray;
           border-radius: 5px;
           .user-pic-container {
@@ -62,7 +61,10 @@
                 .tel-person {
                   border: 1px solid lightgray;
                   border-radius: 5px;
-                  height: 47%;
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
                   .name-number {
                     .name {
                       border: 1px solid gray;

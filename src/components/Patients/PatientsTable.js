@@ -23,21 +23,6 @@ const patientList = [{
   telNo: '0768036130'
 }];
 
-const guardianList = [{
-  id: 1,
-  patientId: 1,
-  picSrc: '',
-  name: 'Isuru Harischandra',
-  relationship: 22,
-  gender: 'Male',
-  city: 'Athurugiriya',
-  location: {
-    lat: 6.93194,
-    long: 79.84778
-  },
-  telNo: '0768036130'
-}];
-
 // Table columns
 const columns = [{
   dataField: 'id',
